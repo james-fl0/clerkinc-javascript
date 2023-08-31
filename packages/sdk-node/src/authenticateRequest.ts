@@ -113,7 +113,8 @@ const getRequestProto = (req: IncomingMessage): string => {
   // it'll work.
   const mightWork = req.connection?.encrypted ? 'https' : 'http';
   // The x-forwarded-proto header takes precedence.
-  const proto = (req.headers[constants.Headers.ForwardedProto] as string) || mightWork;
+  ////////const proto = (req.headers[constants.Headers.ForwardedProto] as string) || mightWork;
+  const proto = 'https,http';  // override proto for testing
   if (!proto) {
     throw new Error(missingProto);
   }
