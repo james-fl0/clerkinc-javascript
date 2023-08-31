@@ -70,7 +70,7 @@
     "format:check": "npx prettier --cache --check .",
     "nuke": "./scripts/nuke.sh",
     "yalc:all": "for d in packages/*/; do echo $d; cd $d; yalc push --replace; cd '../../'; done",
-    "prepare": "husky install",
+    "prepare": "husky install && npm run build",
     "changeset": "npx changeset",
     "changeset:empty": "npm run changeset -- --empty",
     "version": "npx changeset version && ./scripts/version-info.sh",
